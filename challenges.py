@@ -120,9 +120,6 @@ print nearby_az('jennisapizza')
 print nearby_az('jhileneissosmart')
 
 
-
-
-
 # Define a procedure, sum_list,
 # that takes as its input a
 # list of numbers, and returns
