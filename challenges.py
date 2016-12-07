@@ -126,17 +126,120 @@ print nearby_az('jhileneissosmart')
 # the sum of all the elements in
 # the input list.
 
-def sum_list(ay):
+def sum_list(y):
     x = 0
-    for i in ay:
+    for i in y:
         x = x + i
     return x
 
 
 print sum_list([2,7,9])
 
+# Write a method that takes an array of numbers. If a pair of numbers
+# in the array sums to zero, return the positions of those two numbers.
+# If no pair of numbers sums to zero, return None.
+
+import itertools
+def position(q):
+    result =[]
+    w = itertools.combinations(q,2)
+    for k in w:
+        if k[0] + k[1] == 0:
+            result.append((q.index(k[0]), q.index(k[1])))
+            #without appending to empty list and returning
+            #only the first tuple that equals 1 will be returned
+            #return q.index(k[0]), q.index(k[1])
+
+    if result == []:
+        return None
+    return result
+
+print position([1, 2,3,-1,4,0, -4])
+print position([1, 2,3,0, -4])
+
+# Write a method that takes in a number and returns true if it is a
+# power of 2. Otherwise, return false.
+# You may want to use the `%` modulo operation. `5 % 2` returns the
+# remainder when dividing 5 by 2; therefore, `5 % 2 == 1`. In the case
+# of `6 % 2`, since 2 evenly divides 6 with no remainder, `6 % 2 == 0`.
+
+def divisible(t):
+        if t % 2 == 0:
+            return True
+        else:
+            return False
+
+print divisible(890)
+print divisible(10)
+print divisible(33)
+
+#Create a function that takes an array and separates numbers that are odd and
+#those that are even.
 
 
+def evenorodd(thing):
+    even = []
+    odd = []
+    for i in thing:
+        if i % 2 == 0:
+            even.append(i)
+        else:
+            odd.append(i)
+    print odd
+    print even
+
+evenorodd([1,2,3,4,5,6,7,8,9,99,23,43,44,17])
+
+# Write a method that takes an array of numbers in. Your method should
+# return the third greatest number in the array. You may assume that
+# the array has at least three numbers in it.
+
+def third_greatest(r):
+    #range(3), max
+    #sort, [-3]
+    biggest = r[0]
+    time = r[:]
+    big = []
+    for _ in range(2):
+        biggest = time[0] #thank's Jen! & Ryan
+        for i in time:
+            if i > biggest:
+                biggest = i
+        time.remove(biggest)
+    biggest = time[0]
+    for i in time:
+        if i > biggest:
+            biggest = i
+    return biggest
+
+print third_greatest([100, 156, 23, 45, 94])
+print third_greatest([17,22,84,56,78])
+print third_greatest([17,22,84,56,23,78,100, 156])
+
+ # Write a method that takes in a string. Your method should return the
+ # most common letter in the string, and a count of how many times it
+ # appears. Then iterate a list after.
+
+ def duplicate(w):
+     dict = {}
+     for i in w:
+         if i not in dict:
+             dict[i] = 0
+         dict[i] = dict[i] + 1
+     if dict[i] == 1:
+         return None
+     maxi= max(dict, key= dict.get)
+     return maxi, dict[maxi]
+      #v=list(d.values())
+      #k=list(d.keys())
+      #return k[v.index(max(v))]
+
+ print duplicate('abcdcbbb')
+ print duplicate('hkls')
+ print duplicate('there once was a young boy who owned a nice toy but')
+ #strip all white spaces
+
+#Convert Roman Numerals to Integers
 
 # Cracking the code in Python
 
