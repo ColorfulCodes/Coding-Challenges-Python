@@ -239,6 +239,94 @@ print third_greatest([17,22,84,56,23,78,100, 156])
  print duplicate('there once was a young boy who owned a nice toy but')
  #strip all white spaces
 
+ # Write a method that takes in a number and returns a string, placing
+ # a single dash before and after each odd digit. There is one
+ # exception: don't start or end the string with a dash.
+
+ def dashes(s):
+     res = ''
+     for i, x in enumerate(s):
+         if int(x) % 2 != 0:
+             if i == 0:
+                 res += x + '-'
+             elif i == len(s) - 1:
+                 res += '-' + x
+             else:
+                 res += '-' + x + '-'
+         else:
+             res += x
+     return res
+
+ print dashes('0802341')
+ print dashes('123456789011')
+ print dashes('84375495947336485')
+
+
+ # Write a method that takes in a string of lowercase letters and
+ # spaces, producing a new string that capitalizes the first letter of
+ # each word.
+ # You'll want to use the `split` and `join` methods. Also, the String
+ # method `upcase`, which converts a string to all upper case will be
+ # helpful.
+
+ def capitalize(s):
+     #split every word
+     #s.split(' ')
+     #capitalize first letter of each word
+     s = s.split()
+     answer = []
+     for i in s:
+         i = i[0].upper() + i[1:]
+         answer.append(i)
+         t = " ".join(answer)
+     return t
+     #lst = [word[0].upper() + word[1:] for word in s.split()]
+     #s = " ".join(lst)
+
+
+ print capitalize('there was once a time of love')
+ print capitalize('pina colada')
+
+
+# Write a method that takes in a string and an array of indices in the
+# string. Produce a new string, which contains letters from the input
+# string in the order specified by the indices of the array of indices.
+
+def uhh(y,x):
+    #count indices in string
+    pizza = ''
+    for i in range(len(y)):
+        pizza += y[x[i]]
+    return pizza
+
+
+print uhh('word', [3,2,3,2])
+#output  --> drdr
+print uhh('umbrella', [3,2,5,6,7,4,3,2])
+print uhh('jamba', [4,1,3,3,1,2])
+
+# Write a method that takes in an integer (greater than one) and
+# returns true if it is prime; otherwise return false.
+def prime(x):
+    if x >= 2:
+        for i in range(2,x):
+            #print(x % i)
+            #print(x, i)
+            if x % i == 0:
+                return False
+            #if not (x % i):
+                #return False
+            return True
+    else:
+        return False
+
+    #return True
+
+print prime(6)
+print prime(1)
+print prime(13)
+print prime(1000)
+
 #Convert Roman Numerals to Integers
 
 # Cracking the code in Python
