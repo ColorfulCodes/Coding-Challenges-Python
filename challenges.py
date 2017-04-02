@@ -308,7 +308,7 @@ print uhh('jamba', [4,1,3,3,1,2])
 # Write a method that takes in an integer (greater than one) and
 # returns true if it is prime; otherwise return false.
 def prime(x):
-    if x >= 2:
+    if x >= 2 :
         for i in range(2,x):
             #print(x % i)
             #print(x, i)
@@ -327,8 +327,32 @@ print prime(1)
 print prime(13)
 print prime(1000)
 
-#Convert Roman Numerals to Integers
+# Write a method that returns the `n`th prime number. Recall that only
+# numbers greater than 1 can be prime. No positive dividers other than
+#one and itself
+def nth_prime(n):
+    #print 'Choose any number between 2 and 1000.'
+    emp = []
+    i = 2
+    l = 0
+    while i < 1000:
+        for l in range(2, i+1):
+        #search range 2 to 3 and up
+            if i % l == 0:
+                #divisors less than i
+                break
+        if l == i and i != 2:
+            emp.append(i)
+        i = i + 1
+    if emp:
+        return emp[n-1]
+    else:
+        return None
 
-# Cracking the code in Python
 
-#Implement an algorithm to determine if a string has all unique characters
+
+print nth_prime(3)
+print nth_prime(18)
+print nth_prime(1)
+print nth_prime(4)
+print nth_prime(6)
