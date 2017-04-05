@@ -377,3 +377,54 @@ def bprime(x,y):
 bprime(10,14)
 
 #check if word is a palindrome. Many ways.
+#check if whether given string is a palindrome. Not returning true or false in terminal.
+def is_palindrome(x):
+    if x == x[::-1]:
+        print x
+        return True
+    else:
+        return False
+
+is_palindrome("mom")
+is_palindrome("teacher")
+is_palindrome("madam")
+
+#using with while loop
+def is_palindrome(word):
+
+    letters = list(word)
+    is_palindrome = True
+    i = 0
+
+    while len(letters) > 0 and is_palindrome:
+        if letters[0] != letters[(len(letters) - 1)]:
+            is_palindrome = False
+        else:
+            letters.pop(0)
+            if len(letters) > 0:
+                letters.pop((len(letters) - 1))
+
+    print is_palindrome
+
+is_palindrome("mom")
+is_palindrome("team")
+
+# with a for-loop
+def is_palindrome(word):
+
+    letters = list(word)
+    is_palindrome = True
+
+    for letter in letters:
+        if letter == letters[-1]:
+            letters.pop(-1)
+        else:
+            is_palindrome = False
+            break
+
+    print is_palindrome
+
+
+is_palindrome("mom")
+is_palindrome("team")
+is_palindrome("madam")
