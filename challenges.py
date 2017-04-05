@@ -356,3 +356,24 @@ print nth_prime(18)
 print nth_prime(1)
 print nth_prime(4)
 print nth_prime(6)
+
+#list all prime numbers between this and this.
+
+def bprime(x,y):
+    for i in range(x,y):
+        prime = True
+        for j in range(2, i):
+            #range needs to start at 2 to check every number up to there
+            if i < 2:
+                print "Only numbers greater than one are accepted"
+                return
+
+            if i % j == 0:
+                prime = False
+
+        if prime:
+            print i
+
+bprime(10,14)
+
+#check if word is a palindrome. Many ways.
