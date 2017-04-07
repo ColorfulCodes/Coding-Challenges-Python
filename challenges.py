@@ -451,4 +451,41 @@ try:
     print "this number is a float"
 except ValueError:
     pass
-#Hola
+
+#Implement an algorithm to determine if a string has all unique characters
+def unique(s):
+    #s = list(s)
+    #create list add unique characters for x in list. unique(x)
+    if len(set(s)) == len(s):
+        print True
+    else:
+        print False
+
+# turn into set. Check if size of set is smaller than size of string.
+# no sets: do hash table.
+
+#with a hashmap
+def unique(string):
+    hashMap = {}
+    for c in string:
+        if c not in hashMap:
+            #This is just a place holder to add c to dict. "None" can be anything
+            # You could put a second if for last letter of word and not in hashMap
+            #then add. But it is cleaner without another if.
+            hashMap[c] = None
+        elif c in hashMap:
+            return False
+    return True
+
+
+print unique("food") # should print False
+print unique("numbers") #should print True
+print unique("greest") #False
+
+#recursion is this
+"""def fun(x):
+    x+= 1
+    if x <= 10:
+        f(x)
+    else:
+        return x """
