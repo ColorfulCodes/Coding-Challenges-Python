@@ -428,3 +428,26 @@ def is_palindrome(word):
 is_palindrome("mom")
 is_palindrome("team")
 is_palindrome("madam")
+
+#Check whether a string is an integer or float
+
+>>> x = 12
+>>> isinstance(x, int)
+True
+>>> y = 12.0
+>>> isinstance(y, float)
+True
+
+# OR
+
+inNumber = somenumber
+try:
+    inNumberint = int(inNumber)
+    print "this number is an int"
+except ValueError:
+    pass
+try:
+    inNumberfloat = float(inNumber)
+    print "this number is a float"
+except ValueError:
+    pass
