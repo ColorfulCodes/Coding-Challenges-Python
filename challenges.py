@@ -16,6 +16,18 @@ def reverse2(string):
 print reverse("I like eggs")
 print reverse2("I like eggs")
 
+#reverse with recursion
+def reverse(s):
+    print s
+    if s == "":
+        return s
+    else:
+        return reverse(s[1:]) + s[0]
+
+
+print reverse("hola")
+print reverse("timeline")
+
 # Write a method that takes an integer `n` in; it should return
 # n*(n-1)*(n-2)*...*2*1. Assume n >= 0.
 
