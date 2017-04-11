@@ -501,3 +501,23 @@ print unique("greest") #False
         f(x)
     else:
         return x """
+
+# Find wheter a substring is in another
+def substring(x,y):
+    if x in y:
+        print True
+    else:
+        print False
+substring("what","Hey girl whatcha up to")
+substring("ayo","Hey girl whatcha up to")
+substring("rl","Hey girl whatcha up to")
+
+#OR
+#This function returns -1 when there is no substring.
+
+def sub(x,y):
+    if x.find(y):
+        print True
+    else:
+        print False
+sub("I like eggs", "gg")
