@@ -521,3 +521,27 @@ def sub(x,y):
     else:
         print False
 sub("I like eggs", "gg")
+
+
+## Write a method that takes in a string of lowercase letters (no
+# uppercase letters, no repeats). Consider the *substrings* of the
+# string: consecutive sequences of letters contained inside the string.
+# Find the longest such string of letters that is a palindrome.
+# Note that the entire string may itself be a palindrome.
+def lpalindrome(x):
+    if x == x[::-1]:
+        print "this is a palindrome"
+        return True
+    x = x.split()
+    for i in x:
+        if i == i[::-1]:
+            #emp.append(i)
+            #for i in emp:
+            #if i <= range(i+1):
+            print i
+
+
+lpalindrome("sore was I ere I saw eros")
+lpalindrome("I like eggs")
+lpalindrome("radar")
+lpalindrome("anna")
