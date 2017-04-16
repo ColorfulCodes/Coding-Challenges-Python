@@ -545,3 +545,52 @@ lpalindrome("sore was I ere I saw eros")
 lpalindrome("I like eggs")
 lpalindrome("radar")
 lpalindrome("anna")
+
+#check if a string has duplicates
+
+def duplication(string):
+    count = {}
+    #string = string.split()
+    for s in string:
+      if count.has_key(s):
+        count[s] += 1
+      else:
+        count[s] = 1
+
+    #for key in count:
+      #if count[key] > 1:
+        #print key, count[key]
+
+print duplication("I like eggs and popcorn iceiiiiiiii")
+print duplication("recurse center is lit")
+
+#check if a string has duplicates
+
+def duplicates(string):
+    count = []
+    for c in string:
+      if c not in count:
+        count.append(c)
+      else:
+        return True
+    return False
+
+
+print duplicates("I like eggs")
+print duplicates("recurse center is awesome")
+print duplicates("ice")
+
+#get RC explanation. Counts occurence.
+import collections
+
+def thestring(s):
+
+    d = collections.defaultdict(int)
+    for c in s:
+        d[c] += 1
+    for c in sorted(d, key=d.get, reverse=True):
+        print '%s %6d' % (c, d[c])
+
+
+thestring("pizza")
+thestring('icecream')
