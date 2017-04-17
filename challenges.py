@@ -564,6 +564,7 @@ def duplication(string):
 print duplication("I like eggs and popcorn iceiiiiiiii")
 print duplication("recurse center is lit")
 
+
 #check if a string has duplicates
 
 def duplicates(string):
@@ -594,3 +595,42 @@ def thestring(s):
 
 thestring("pizza")
 thestring('icecream')
+
+# Write a method that takes in two numbers. Return the greatest
+# integer that evenly divides both numbers. You may wish to use the
+# `%` modulo operation.
+
+def twonum(a,b):
+    #ask why this does not work
+    # for loop for numbers upto given
+    #this is recursion
+    #for i in range(1,j):
+        #if i > 1:
+            #if i % j == 0 and i % q == 0:
+                #print i
+    if b == 0:
+        return a
+    else:
+        return twonum(b, a % b)
+
+print twonum(10,20)
+print twonum(3,12)
+print twonum(10,55)
+
+#also built in
+from fractions import gcd
+gcd(20,8)
+#should produce >>> 4
+
+
+#interesting algo from interactive python
+def moveTower(height,fromPole, toPole, withPole):
+    if height >= 1:
+        moveTower(height-1,fromPole,withPole,toPole)
+        moveDisk(fromPole,toPole)
+        moveTower(height-1,withPole,toPole,fromPole)
+
+def moveDisk(fp,tp):
+    print("moving disk from",fp,"to",tp)
+
+moveTower(3,"A","B","C")
