@@ -634,3 +634,44 @@ def moveDisk(fp,tp):
     print("moving disk from",fp,"to",tp)
 
 moveTower(3,"A","B","C")
+
+
+#replace all spaces with percents
+
+def replace(t):
+    for i in t:
+        if " " in t:
+            t = t.replace(" ", "%")
+    return t
+
+
+print replace("pink chai is good")
+
+#Determine if two strings are anagrams
+
+def anagram(j,w):
+    # creates list of characters in alphabetical order
+    if sorted(j) == sorted(w):
+        return True
+
+    else:
+        return False
+
+print anagram('car', 'rac')
+print anagram("sealion", "rainbow")
+print anagram("star", "tars")
+
+
+#Find the first non-repeated character in a string
+def fduplicate(word):
+    count = {}
+    for c in word:
+        if c not in count:
+            count[c] = 0
+        count[c] += 1
+    for c in word:
+        if count[c] == 1:
+            return c
+
+print fduplicate("steameys")
+print fduplicate("mississippi")
