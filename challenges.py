@@ -675,3 +675,15 @@ def fduplicate(word):
 
 print fduplicate("steameys")
 print fduplicate("mississippi")
+
+
+#check if a string contains only digits
+def ifint(x):
+    if x.isdigit():
+        return True
+    else:
+        return False
+
+print ifint('slime')
+print ifint('s35t')
+print ifint('53342')
