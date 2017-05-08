@@ -686,3 +686,27 @@ def ifint(x):
 print ifint('slime')
 print ifint('s35t')
 print ifint('53342')
+
+
+#reverse words in sentence without library method
+
+def sinlib(x):
+    if len(x) <= 1:
+        return x
+
+    else:
+        x = x.split()
+        x = x[::-1]
+        return " ".join(x)
+
+
+print sinlib("Time to eat pie")
+print sinlib("Summer is awesome")
+
+#convert numeric string to int "3456" to 3456
+
+def toint(b):
+    b = int(b)
+    return b
+
+print toint("434354")
